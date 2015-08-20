@@ -1,0 +1,43 @@
+// Planilla con pregunta de control.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+
+using namespace std;
+
+void main()
+{
+	float suma=0,promedio,sb,sn;
+	int i=0;
+	char op;
+	do
+	{
+		cout<<"Ingrese el salario bruto: ";
+		cin>>sb;
+		if((sb>=2840) && (sb<=15000))
+		{
+			sn=sb-(sb*0.13)-(sb*0.121);
+		}
+		else
+		{
+			if(sb>15000)
+			{
+				sn=sb-(sb*0.13)-(sb*0.121)-(sb*0.01);
+			}
+			else
+			{
+				sn=sb-(sb*0.121);
+			}
+		}
+		i++;
+		suma=suma+sn;
+		cout<<"Desea continuar:(s)?";
+		cin>>op;
+	}while(op=='s');
+	promedio=suma/i;
+	cout<<"El promedio es: "<<promedio;
+	getch();
+}
