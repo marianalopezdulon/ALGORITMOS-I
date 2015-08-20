@@ -1,0 +1,26 @@
+// Hallar el area del circulo.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+
+using namespace std;
+float a_circulo(float r);
+
+void main()
+{
+	float radio, area;
+	cout<<"Ingrese el radio: ";
+	cin>>radio;
+	area=a_circulo(radio);
+	cout<<"El area del circulo es: "<<area;
+	getch();
+}
+float a_circulo(float r)
+{
+	float a;
+	a=3.1416*r*r;
+	return a;
+}
