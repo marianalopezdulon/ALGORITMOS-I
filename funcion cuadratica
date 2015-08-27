@@ -1,0 +1,39 @@
+// cuadratica.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "math.h"
+
+using namespace std;
+void cuadratica(float a,float b,float c,float &valor1, float &valor2);
+
+void main()
+{
+	float a, b, c, x1, x2;
+	cout<<"Ingrese el valor de a:";
+	cin>>a;
+	cout<<"Ingrese el valor de b:";
+	cin>>b;
+	cout<<"Ingrese el valor de c:";
+	cin>>c;
+	cuadratica(a,b,c,x1,x2);
+	getch();
+}
+void cuadratica(float a, float b, float c, float &valor1, float &valor2)
+{
+	float p;
+	p=b*b-4*a*c;
+	if(p>0)
+	{
+		valor1=(-b+sqrt(p))/(2*a);
+		valor2=(-b-sqrt(p))/(2*a);
+		cout<<"x1 es:"<<valor1<<endl;
+		cout<<"x2 es:"<<valor2;
+	}
+	else
+	{
+		cout<<"Error numero imaginario";
+	}
+}
