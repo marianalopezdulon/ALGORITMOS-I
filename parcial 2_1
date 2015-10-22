@@ -1,0 +1,61 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+#define fil 20
+#define col 20
+#define tam 20
+
+using namespace std;
+
+struct matriz
+{
+	char mat[fil][col];
+};
+
+void cargar_vector(matriz vec[], int n,string cadena);
+void mostrar_vector(matriz vec[], int n);
+
+void main()
+{
+	int n;
+	matriz vec[tam];
+	string cadena;
+	cout<<"ingrese la cadena"<<'\t';
+	getline(cin,cadena);
+	cout<<"ingrese el tamamo";
+	cin>>n;
+	cargar_vector(vec,n,cadena);
+	mostrar_vector(vec,n);
+	getch();
+}
+void cargar_vector(matriz vec[], int n,string cadena)
+{
+	int l=0;
+	for(int j=0;j<n;j++)
+	{
+		for(int i=0;i<n;i++)
+		{
+			for(int k=0;k<n;k++)
+			{
+				vec[i].mat[k][j]=cadena[l];
+				l++;
+			}
+			if(l==cadena.length())
+			l=0;
+		}
+	}
+
+}
+
+void mostrar_vector(matriz vec[], int n)
+{for(int j=0;j<n;j++)
+	{for(int i=0;i<n;i++)
+		{for(int k=0;k<n;k++)
+			{cout<<"vec["<<j<<"].matriz["<<k<<"]["<<i<<"]"<<vec[j].mat[k][i];
+			cout<<endl;
+			}
+		}
+	}
+}
